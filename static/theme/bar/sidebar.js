@@ -37,6 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   $("#sidebar-container").load(
-    "https://bachtiar21.github.io/jpo_erp/static/theme/sidebar.html"
+    "http://127.0.0.1:5500/jpo_erp/static/theme/sidebar.html"
   );
 });
