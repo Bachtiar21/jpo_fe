@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+        content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="../../static/img/icons/icon-48x48.png" />
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
+    <title>JPO ERP</title>
+
+    <link href="../../static/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Start -->
+        <div id="sidebar-container"></div>
+        <!-- Sidebar End -->
+
+        <div class="main">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <a class="sidebar-toggle js-sidebar-toggle">
+                    <i class="hamburger align-self-center"></i>
+                </a>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav navbar-align">
+                        <li class="nav-item dropdown">
+                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+                                data-bs-toggle="dropdown">
+                                <i class="align-middle" data-feather="settings"></i>
+                            </a>
+
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+                                data-bs-toggle="dropdown">
+                                <img src="https://bachtiar21.github.io/jpo_erp/static/img/avatars/avatar.jpg"
+                                    class="avatar img-fluid rounded-circle me-1" /> <span class="text-dark"
+                                    id="namaUser"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="../../profil.html">Lihat Profil</a>
+                                <a class="dropdown-item" id="logoutButton">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Content Start -->
+            <main class="content">
+                <div class="container-fluid p-0">
+                    <h5 class="right-aligned" style="float: right">
+                        <a href="../../dashboard.html">Home</a> /
+                        <a href="token_view.html">Token</a> /
+                        Update Data Token
+                    </h5>
+                    <h1 class="h3 mb-3"><b>Form Update Token</b></h1>
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- Inputan Token -->
+                                        <h5 class="card-title">Token</h5>
+                                        <input type="text" class="form-control" id="tokenInput" name="tokenInput" />
+                                        <!-- Inputan Nama Pengguna -->
+                                        <h5 class="card-title mt-2">Nama Pengguna</h5>
+                                        <input type="text" class="form-control" id="namaPenggunaInput"
+                                            name="namaPenggunaInput" />
+                                        <!-- <select class="form-select" id="namaPenggunaInput" aria-label="Pilih Opsi">
+                                            <option selected>Masukkan Nama Pengguna</option>
+                                        </select> -->
+                                        <!-- Inputan Status Token -->
+                                        <h5 class="card-title mt-2">Status Token</h5>
+                                        <select class="form-select" id="statusTokenInput" aria-label="Pilih Opsi">
+                                            <option selected>Masukkan Status Token</option>
+                                            <option value="used">Dipakai</option>
+                                            <option value="not">Tidak Dipakai</option>
+                                        </select>
+                                        <!-- Inputan Created At -->
+                                        <h5 class="card-title mt-2">Created At</h5>
+                                        <input type="text" class="form-control" id="dateCreatedInput"
+                                            name="dateCreatedInput" disabled/>
+                                        <!-- Inputan Updated At -->
+                                        <h5 class="card-title mt-2">Updated At</h5>
+                                        <input type="text" class="form-control" id="dateUpdatedInput"
+                                            name="dateUpdatedInput" disabled/>
+
+                                        <!-- Button Cancel -->
+                                        <div style="
+                                                position: relative;
+                                                text-align: right;
+                                                margin-top: 20px;
+                                            ">
+                                            <button type="button" class="btn btn-primary" id="submitButton">
+                                                Update
+                                            </button>
+                                            <a href="token_view.html" type="button" class="btn btn-info">
+                                                Cancel
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Content End -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a class="text-muted" href="#" target="_blank"><strong>JPO</strong></a> - <a
+                                    class="text-muted" href="https://adminkit.io/"
+                                    target="_blank"><strong>ERP</strong></a> &copy;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer End -->
+        </div>
+    </div>
+
+    <!-- Spinner Start -->
+    <div class="loader"></div>
+    <!-- Spinner End -->
+
+    <script src="../../static/js/style/spinner.js" defer></script>
+    <script src="../../static/js/controller/logout.js" type="module"></script>
+    <script src="../../static/js/superadmin/token_update.js" type="module"></script>
+    <script src="../../static/js/app.js"></script>
+    <script src="../../static/js/navbar.js" type="module"></script>
+    <script src="../../static/theme/bar/sidebar.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+
+</html>

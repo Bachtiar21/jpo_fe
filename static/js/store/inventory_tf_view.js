@@ -70,7 +70,7 @@ fetch(AllTransferIn, requestOptionsGet)
                         </td>
                         <td style="text-align: center; vertical-align: middle">
 							<button type="button" class="btn btn-info" data-tfin-id="${values.id}">Detail</button>	
-                            <button type="button" class="btn btn-warning" data-tfin-id="${values.id}">Update</button>	
+                            <button type="button" class="btn btn-warning" data-tfin-id="${values.id}">Edit</button>	
                             <button type="button" class="btn btn-danger" data-tfin-id="${values.id}">Delete</button>
                         </td>
                     </tr>`;
@@ -240,7 +240,7 @@ fetch(AllTransferOut, requestOptionsGet)
                         </td>
                         <td style="text-align: center; vertical-align: middle">
 							<button id="detailTfOut" type="button" class="btn btn-info" data-tfout-id="${values.id}">Detail</button>	
-                            <button id="updateTfOut" type="button" class="btn btn-warning" data-tfout-id="${values.id}">Update</button>	
+                            <button id="updateTfOut" type="button" class="btn btn-warning" data-tfout-id="${values.id}">Edit</button>	
                         </td>
                     </tr>`;
 		});

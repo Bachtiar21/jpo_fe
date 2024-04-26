@@ -94,7 +94,7 @@ CihuyDomReady(() => {
                         </td>
                         <td style="text-align: center; vertical-align: middle">
                             <button type="button" class="btn btn-info" data-inv-id="${values.id}">Detail</button>    
-                            <button type="button" class="btn btn-warning" data-inv-id="${values.id}">Update</button>
+                            <button type="button" class="btn btn-warning" data-inv-id="${values.id}">Edit</button>
                         </td>
                     </tr>`;
         });
@@ -216,7 +216,7 @@ fetch(AllBill, requestOptionsGet)
                         </td>
                         <td style="text-align: center; vertical-align: middle">
 							<button id="detailBill" type="button" class="btn btn-info" data-bill-id="${values.id}">Detail</button>	
-                            <button id="updateBill" type="button" class="btn btn-warning" data-bill-id="${values.id}">Update</button>	
+                            <button id="updateBill" type="button" class="btn btn-warning" data-bill-id="${values.id}">Edit</button>	
                         </td>
                     </tr>`;
 		});
@@ -337,7 +337,7 @@ fetch(AllCommission, requestOptionsGet)
                         </td>
                         <td style="text-align: center; vertical-align: middle">
 							<button id="detailKomisi" type="button" class="btn btn-info" data-com-id="${values.id}">Detail</button>	
-                            <button id="updateKomisi" type="button" class="btn btn-warning" data-com-id="${values.id}">Update</button>	
+                            <button id="updateKomisi" type="button" class="btn btn-warning" data-com-id="${values.id}">Edit</button>	
                         </td>
                     </tr>`;
 		});

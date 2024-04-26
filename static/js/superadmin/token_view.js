@@ -29,7 +29,7 @@ fetch(AllToken, requestOptionsGet)
                     <tr>
                         <td hidden></td>
                         <td style="text-align: center; vertical-align: middle">
-                            <p class="fw-normal mb-1">${values.token}</p>
+                            <p class="fw-normal mb-1">${values.token_update}</p>
                         </td>
                         <td id="userNameCell${values.user_id}" style="text-align: center; vertical-align: middle">
                             ${values.user_id ? `<span id="userNameSpan${values.user_id}"></span>` : 'Tidak Ada'}

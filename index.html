@@ -60,7 +60,6 @@
 
 			<main class="content">
 				<div class="container-fluid p-0">
-
 					<div class="card-body">
 						<div class="row">
 							<div class="col">
@@ -71,133 +70,23 @@
 							</div>
 						</div>
 					</div>
-
-
+					<!-- Container untuk menampilkan data stok -->
 					<div class="row m-5">
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
+						<div id="cardNone" class="card-body mt-5" hidden>
+							<div class="card text-center">
+								<h5 class="card-title p-5">Data Tidak Tersedia</h5>
 							</div>
 						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
+						<!-- Tempat untuk menampilkan elemen card stok dari JavaScript -->
 					</div>
-
-					<div class="row m-5">
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">#SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-3">
-							<div class="card">
-								<img class="card-img-top" src="./src/img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Judul | Grade</h5>
-									<p class="card-text">SKU</p>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Deskripsi</p>
-									<p class="card-text">Spesifikasi</p>
-									<p class="card-text">Stock Tersisi : 90 Roll 800 Kg</p>
-								</div>
-							</div>
-						</div>
-						<div class="pagination mx-auto">
-							<!-- Tempatkan pagination di luar dari div .row -->
-							<button id="prevPageBtn" class="btn btn-primary">Previous</button>
-							<span id="currentPage" class="mx-2">Halaman 1</span>
-							<button id="nextPageBtn" class="btn btn-primary">Next</button>
-						</div>
+					<div class="pagination mx-auto">
+						<!-- Tempatkan pagination di luar dari div .row -->
+						<button id="prevPageBtn" class="btn btn-primary">Previous</button>
+						<span id="currentPage" class="mx-2">Halaman 1</span>
+						<button id="nextPageBtn" class="btn btn-primary">Next</button>
 					</div>
 				</div>
-			</main>
+			</main>			
 
 			<!-- Footer Start -->
 			<footer class="footer">

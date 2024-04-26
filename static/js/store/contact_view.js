@@ -41,7 +41,7 @@ fetch(AllContact, requestOptionsGet)
                         </td>
                         <td style="text-align: center; vertical-align: middle">
                             <button type="button" class="btn btn-info" data-contact-id="${values.id}">Detail</button>
-                            <button type="button" class="btn btn-warning" data-contact-id="${values.id}">Update</button>	
+                            <button type="button" class="btn btn-warning" data-contact-id="${values.id}">Edit</button>	
                             <button type="button" class="btn btn-danger" data-contact-id="${values.id}">Delete</button>
                         </td>
                     </tr>`;

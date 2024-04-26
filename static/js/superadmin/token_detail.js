@@ -12,7 +12,7 @@ fetch(TokenById, requestOptionsGet)
     })
     .then((values) => {
         if (values && values.data) {
-            document.getElementById("tokenInput").value = values.data.token;
+            document.getElementById("tokenInput").value = values.data.token_update;
 
             // Keterangan Nama Pengguna
             if (values.data.user_id === null) {
