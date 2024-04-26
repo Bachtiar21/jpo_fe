@@ -71,17 +71,6 @@ function showConfirmationAlert(data) {
 	}).then((result) => {
 		if (result.isConfirmed) {
 			updateContact(data);
-			// Menampilkan Data Alert Success
-			Swal.fire({
-				icon: 'success',
-				title: 'Sukses!',
-				text: 'Data Kontak Berhasil Diperbarui',
-				showConfirmButton: false,
-				timer: 1500
-			})
-			.then(() => {
-				window.location.href = 'contact_view.html';
-			});
 		} else {
 			// Menampilkan Data Alert Error
 			Swal.fire({
@@ -100,17 +89,53 @@ function showNoChangeAlert() {
 		text : 'Tidak Ada Perubahan Data'
 	});
 }
+
 // Function Fetch Endpoint Put
 function updateContact(data) {
-	fetch(PutContact, {
-		method: "PUT",
-		headers: {
+    fetch(PutContact, {
+        method: "PUT",
+        headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
         },
-		body: JSON.stringify(data)
-	})
-		.catch(error => {
-			console.error("Error saat melakukan PUT data:", error);
-		});
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Gagal memperbarui data Kontak');
+        }
+        return response.json();
+    })
+    .then(responseData => {
+        // Handle successful response here
+        console.log('Response:', responseData);
+        // Menampilkan Data Alert Success
+        Swal.fire({
+            icon: 'success',
+            title: 'Sukses!',
+            text: 'Data Kontak Berhasil Diperbarui',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        // Redirect to another page if needed
+        window.location.href = 'contact_view.html';
+    })
+    .catch(error => {
+        console.error("Error saat melakukan PUT data:", error);
+        // Handle specific error message
+        if (error.message === 'Gagal memperbarui data Kontak') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Gagal memperbarui data Kontak!',
+            });
+        } else {
+            // Handle other errors
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Gagal memperbarui data Kontak!',
+            });
+        }
+    });
 }
