@@ -11,7 +11,9 @@ fetch(GetStockAllById, requestOptionsGet)
     const data = responseData.data;
     if (data) {
         document.getElementById('namaBarangInput').value = data.nama_barang;
-        document.getElementById('spesifikasiInput').value = `Ketebalan: ${data.ketebalan}, Setting: ${data.setting}, Gramasi: ${data.gramasi}`;
+        document.getElementById('ketebalanInput').value = data.ketebalan;
+        document.getElementById('settingInput').value = data.setting;
+        document.getElementById('gramasiInput').value = data.gramasi;
         document.getElementById('gradeInput').value = data.grade;
         document.getElementById('hargaJualInput').value = data.price;
         document.getElementById('deskripsiInput').value = data.description;
