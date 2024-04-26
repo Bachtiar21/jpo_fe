@@ -190,8 +190,10 @@ function updatePurchaseOrder(data) {
             text: 'Data Purchase Order Berhasil Diperbarui',
             showConfirmButton: false,
             timer: 1500
-        });
-        window.location.href = 'purchase_po_view.html';
+        })
+        .then(() => {
+            window.location.href = 'purchase_po_view.html';
+        })
     })
     .catch(error => {
         console.error("Error saat melakukan PUT data:", error);
