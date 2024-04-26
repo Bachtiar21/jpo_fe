@@ -118,8 +118,7 @@ function showConfirmationAlert(data) {
     Swal.fire({
         title: 'Perubahan Data Purchase Order',
         html:
-        `<input type="text" id="tokenUpdateInput" class="swal2-input" placeholder="Masukkan token_update">`,
-        text: "Apakah Anda yakin ingin melakukan perubahan?",
+        `<input type="text" id="tokenUpdateInput" class="swal2-input" placeholder="Masukkan token update">`,
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -139,17 +138,6 @@ function showConfirmationAlert(data) {
             if (tokenUpdate) {
                 const updatedData = { ...data, token_update: tokenUpdate };
                 updatePurchaseOrder(updatedData);
-                // Menampilkan Data Alert Success
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Sukses!',
-                    text: 'Data Purchase Order Berhasil Diperbarui',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                // .then(() => {
-                //     window.location.href = 'purchase_po_view.html';
-                // });
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -178,15 +166,49 @@ function showNoChangeAlert() {
 }
 // Function Fetch Endpoint Put
 function updatePurchaseOrder(data) {
-	fetch(PutPurchaseOrder, {
-		method: "PUT",
-		headers: {
+    fetch(PutPurchaseOrder, {
+        method: "PUT",
+        headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
         },
-		body: JSON.stringify(data)
-	})
-		.catch(error => {
-			console.error("Error saat melakukan PUT data:", error);
-		});
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Token sudah digunakan');
+        }
+        return response.json();
+    })
+    .then(responseData => {
+        // Handle successful response here
+        console.log('Response:', responseData);
+        // Menampilkan Data Alert Success
+        Swal.fire({
+            icon: 'success',
+            title: 'Sukses!',
+            text: 'Data Purchase Order Berhasil Diperbarui',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        window.location.href = 'purchase_po_view.html';
+    })
+    .catch(error => {
+        console.error("Error saat melakukan PUT data:", error);
+        // Handle specific error message
+        if (error.message === 'Token sudah digunakan') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Token sudah digunakan!',
+            });
+        } else {
+            // Handle other errors
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Gagal memperbarui data Purchase Order!',
+            });
+        }
+    });
 }
