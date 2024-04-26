@@ -24,6 +24,6 @@ fetch(CekUser, requestOptionsPost)
         timer : 2000,
         showConfirmButton : false
       }).then(() => {
-        window.location.href = BaseUrlFeDeploy + 'index.html';
+        window.location.href = BaseUrlFe + 'index.html';
       })
 });
