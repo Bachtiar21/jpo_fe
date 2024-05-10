@@ -167,7 +167,7 @@ function showNoChangeAlert() {
 // Function Fetch Endpoint Put
 function updatePurchaseOrder(data) {
     fetch(PutPurchaseOrder, {
-        method: "PUT",
+        method: "POST",
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

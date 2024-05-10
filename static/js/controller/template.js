@@ -50,6 +50,7 @@ export let UrlGetAllInventory = "api/auth/inventories";
 export let UrlGetAllTransferIn = "api/auth/inventory/transfer-in/i/";
 export let UrlGetWarehouseByToken = "api/auth/warehouses-list";
 export let UrlGetAllStock = "api/auth/inventory/stocks";
+export let UrlGetAllStockNew = "api/auth/stocks";
 export let UrlGetAllSalesOrder = "api/auth/sales-orders";
 export let UrlGetAllSKU = "api/auth/sales-order/all-sku/";
 export let UrlGetDataBySKU = "/api/auth/sales-order";
@@ -118,6 +119,7 @@ export let UrlSentTransferOut = "api/auth/inventory/transfer-out";
 export let UrlPaidBill = "api/auth/bill";
 export let UrlPaidInvoice = "api/auth/invoice";
 export let UrlPaidCommission = "api/auth/commission";
+export let UrlPutStock = "api/auth/inventory/stock/u";
 
 // Endpoint Delete
 export let UrlDeleteUser = "api/auth/user/d";

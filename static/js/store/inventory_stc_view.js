@@ -1,6 +1,6 @@
 import { CihuyId } from "https://c-craftjs.github.io/element/element.js";
 import { CihuyDomReady, CihuyQuerySelector } from "https://c-craftjs.github.io/table/table.js";
-import { BaseUrl, UrlGetByIdContact, UrlGetAllStock, requestOptionsGet } from "../controller/template.js";
+import { BaseUrl, UrlGetByIdContact, UrlGetAllStock, UrlGetAllStockNew, requestOptionsGet } from "../controller/template.js";
 import { getBadgePO } from "../style/badge.js";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -33,8 +33,9 @@ CihuyDomReady(() => {
 	let halamannow = 1;
 
     const AllStock = BaseUrl + UrlGetAllStock;
+    const AllStockNew = BaseUrl + UrlGetAllStockNew;
 
-    fetch(AllStock, requestOptionsGet)
+    fetch(AllStockNew)
         .then((result) => {
             return result.json();
         })

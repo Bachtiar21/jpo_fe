@@ -1,4 +1,4 @@
-import { BaseUrl, UrlCekUser, requestOptionsPost, requestOptionsGet } from "./controller/template.js";
+import { BaseUrl, UrlCekUser, UrlGetAllStockNew, requestOptionsPost } from "./controller/template.js";
 import { setInnerText } from "https://cdn.jsdelivr.net/gh/jscroot/element@0.0.5/croot.js";
 
 // Fungsi untuk menampilkan navbarIndex dan menyembunyikan navbarHome
@@ -15,6 +15,7 @@ function tampilkanNavbarHome() {
 
 // Create Url Cek User
 const CekUser = BaseUrl + UrlCekUser;
+const GetAllStock = BaseUrl + UrlGetAllStockNew;
   
 // Melakukan permintaan POST ke endpoint
 fetch(CekUser, requestOptionsPost)
@@ -34,13 +35,10 @@ fetch(CekUser, requestOptionsPost)
         tampilkanNavbarHome();
 });
 
-// URL endpoint data stok
-const stockEndpoint = 'http://127.0.0.1:8000/api/auth/inventory/stocks';
-
 // Fungsi untuk mengambil data stok dari API
 async function fetchStockData() {
     try {
-        const response = await fetch(stockEndpoint, requestOptionsGet);
+        const response = await fetch(GetAllStock);
         const data = await response.json();
         return data.data;
     } catch (error) {
