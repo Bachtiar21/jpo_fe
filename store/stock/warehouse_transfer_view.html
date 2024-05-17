@@ -62,40 +62,22 @@
             <main class="content">
                 <div class="container-fluid p-0">
                     <h5 class="right-aligned" style="float: right">
-                        <a href="../../dashboard.html">Home</a> / <a href="../inventory.html">Inventory</a> / Stock
+                        <a href="../../dashboard.html">Home</a> / <a href="../inventory.html">Inventory</a> / <a href="../stock/inventory_stc_view.html">Stock</a> / Warehouse Transfer
                     </h5>
-                    <h1 class="h3 mb-3"><b>Stock View</b></h1>
-                    <a href="warehouse_transfer_view.html" class="btn btn-primary mb-2">Warehouse Transfer</a>
-                    <!-- Menu Pilihan Stock Start -->
-                    <div class="card">
-                        <div class="card-body">
-                            <select class="form-select" id="selectKategori" aria-label="Pilih Opsi">
-                                <option selected>Pilih Kategori</option>
-                                <option value="all">All</option>
-                                <option value="warehouse">Warehouse</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- Menu Pilihan Stock End -->
+                    <h1 class="h3 mb-3"><b>Warehouse Asal View</b></h1>
+
                     <!-- Content Stock All Start -->
                     <div id="stockMenuAll">
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <div class="row no-gutters" style="height: 40px">
-                                            <h1 class="h3 mt-2">Tabel Stock All</h1>
-                                            <div class="col-md-3" style="
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        width: 15%;
-                                        margin-top: 20px;
-                                    ">
-                                                <input type="text" class="form-control" id="searchInputAll"
-                                                    placeholder="Cari" />
-                                            </div>
-                                        </div>
+
+                                        <!-- Inputan Pilih SKU -->
+                                        <h5 class="card-title mt-2">Pilih SKU</h5>
+                                        <select class="form-select" id="listSKU" aria-label="Pilih Opsi">
+                                        <option selected>Pilih SKU</option>
+                                        </select>
 
                                         <hr />
                                         <div class="table-container">
@@ -104,76 +86,12 @@
                                                     <tr style="text-align: center; vertical-align: middle">
                                                         <th hidden></th>
                                                         <th>Nama</th>
-                                                        <th>SKU</th>
-                                                        <th>Grade</th>
-                                                        <th>Stock (Roll & Kg)</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
 
                                                 <!-- Fetch Data Start -->
-                                                <tbody id="tablebodyAll"></tbody>
-                                                <!-- Fetch Data End -->
-
-                                            </table>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-md-6">
-                                                <div class="pagination">
-                                                    <button id="prevPageBtnAll" class="btn btn-primary">
-                                                        Previous
-                                                    </button>
-                                                    <span id="currentPageAll" class="mx-2">Halaman 1</span>
-                                                    <button id="nextPageBtnAll" class="btn btn-primary">
-                                                        Next
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Content Transfer In End -->
-
-                    <!-- Content Stock Warehouse Start -->
-                    <div id="stockMenuWarehouse" hidden>
-                        <div class="row justify-content-center">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row no-gutters" style="height: 40px">
-                                            <h1 class="h3 mb-3">Tabel Stock Warehouse</h1>
-                                            <div class="col-md-3" style="
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        width: 15%;
-                                        margin-top: 20px;
-                                    ">
-                                                <input type="text" class="form-control" id="searchInputWarehouse"
-                                                    placeholder="Cari" />
-                                            </div>
-                                        </div>
-
-                                        <hr />
-                                        <div class="table-container">
-                                            <table id="exampleMasuk" class="table table-striped" style="width: 100%">
-                                                <thead>
-                                                    <tr style="text-align: center; vertical-align: middle">
-                                                        <th hidden></th>
-                                                        <th>Nama Gudang</th>
-                                                        <th>Total Product</th>
-                                                        <th>Total Stock (Roll & Kg)</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <!-- Fetch Data Start -->
-                                                <tbody id="tablebodyWarehouse">
-                                                </tbody>
+                                                <tbody id="tablebody"></tbody>
                                                 <!-- Fetch Data End -->
 
                                             </table>
@@ -196,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Content Transfer Out End -->
+                    <!-- Content Transfer In End -->
 
                 </div>
             </main>
@@ -226,8 +144,7 @@
 
     <script src="../../static/js/style/spinner.js" defer></script>
     <script src="../../static/js/controller/logout.js" type="module"></script>
-    <script src="../../static/js/store/inventory_stc_view.js" type="module"></script>
-    <!-- <script src="../../static/js/navbar.js" type="module"></script> -->
+    <script src="../../static/js/store/warehouse_transfer_view.js" type="module"></script>
     <script src="../../static/js/app.js"></script>
     <script src="../../static/theme/bar/sidebar.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
