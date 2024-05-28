@@ -67,9 +67,9 @@ submitButton.addEventListener('click', () => {
 
   // Create a data object to be sent
   const postData = {
-    stock_roll_rev : stokRoll,
-    stock_kg_rev: stokKg,
-    stock_rib_rev : stokRib,
+    stock_roll : stokRoll,
+    stock_kg: stokKg,
+    stock_rib : stokRib,
     receive_date : receiveDate
 
   };
