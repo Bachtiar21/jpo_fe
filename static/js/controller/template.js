@@ -53,6 +53,7 @@ export let UrlGetAllStock = "api/auth/inventory/stocks";
 export let UrlGetAllStockNew = "api/auth/stocks";
 export let UrlGetAllSalesOrder = "api/auth/sales-orders";
 export let UrlGetAllSKU = "api/auth/sales-order/all-sku/";
+export let UrlGetSKUByStock = "api/auth/sales-order/stock/skus";
 export let UrlGetDataBySKU = "/api/auth/sales-order";
 export let UrlGetAllTransferOut = "api/auth/inventory/transfer-out/i/";
 export let UrlGetAllInvoice = "api/auth/invoices";
@@ -61,6 +62,7 @@ export let UrlGetAllCommission = "api/auth/comissions";
 export let UrlGetSKUForWarehouseTf = "api/auth/inventory/stock/skus";
 export let UrlGetStockBySKU = "api/auth/inventory/stock";
 export let UrlGetWarehouseByLogged = "api/auth/inventory/stock/warehouses-list";
+export let UrlGetWarehouseBySKU = "api/auth/sales-order/stock/warehouses";
 
 // Endpoint Get By Id
 export let UrlGetConvectionById = "api/auth/convection";

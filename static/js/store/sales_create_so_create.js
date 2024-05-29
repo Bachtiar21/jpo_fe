@@ -1,21 +1,21 @@
-import { BaseUrl, UrlGetAllSKU, UrlGetAllContact, UrlGetWarehouseByToken, UrlPostSalesOrder, requestOptionsGet } from "../controller/template.js";
+import { BaseUrl, UrlGetWarehouseBySKU, UrlGetSKUByStock, UrlGetAllContact, UrlGetWarehouseByToken, UrlPostSalesOrder, requestOptionsGet } from "../controller/template.js";
 import { token } from "../controller/cookies.js";
 
-const GetAllSKU = BaseUrl + UrlGetAllSKU;
+const GetAllSKU = BaseUrl + UrlGetSKUByStock;
 const GetAllContact = BaseUrl + UrlGetAllContact;
-const AllWarehouseByToken = BaseUrl + UrlGetWarehouseByToken;
+const AllWarehouseByToken = BaseUrl + UrlGetWarehouseBySKU;
 const GetAllBroker = BaseUrl + UrlGetAllContact;
 const PostSalesOrder = BaseUrl + UrlPostSalesOrder;
 
-const dropdownVendor = document.getElementById("listSKU");
+const dropdownSKU = document.getElementById("listSKU");
 fetch(GetAllSKU, requestOptionsGet)
     .then((response) => response.json())
     .then((data) => {
-        data.data.forEach((sku) => {
+        data.data.forEach((item) => {
             const option = document.createElement("option");
-            option.value = sku;
-            option.textContent = sku;
-            dropdownVendor.appendChild(option);
+            option.value = item.sku;
+            option.textContent = item.sku;
+            dropdownSKU.appendChild(option);
         });
     })
     .catch((error) => {
@@ -53,20 +53,29 @@ fetch(GetAllBroker, requestOptionsGet)
 });
 
 const dropdownWarehouse = document.getElementById("listWarehouse");
-fetch(AllWarehouseByToken, requestOptionsGet)
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach((warehouse) => {
-            const option = document.createElement("option");
-            option.value = warehouse.id;
-            option.textContent = warehouse.name;
-            dropdownWarehouse.appendChild(option);
-        });
-    })
-    .catch((error) => {
-        console.error('Error fetching warehouse:', error);
-});
+// Event listener for SKU selection
+dropdownSKU.addEventListener('change', () => {
+    const selectedSKU = dropdownSKU.value;
 
+    // Fetch warehouses based on selected SKU
+    fetch(AllWarehouseByToken + `/${selectedSKU}/sku`, requestOptionsGet)
+        .then((response) => response.json())
+        .then((data) => {
+            // Clear previous options
+            dropdownWarehouse.innerHTML = "";
+
+            // Populate dropdown with new options
+            data.data.forEach((item) => {
+                const option = document.createElement("option");
+                option.value = item.warehouse.id;
+                option.textContent = item.warehouse.name;
+                dropdownWarehouse.appendChild(option);
+            });
+        })
+        .catch((error) => {
+            console.error('Error fetching warehouse:', error);
+        });
+});
 const radioButtons = document.querySelectorAll('input[name="radios-example"]');
 const brokerDiv = document.querySelector('.broker');
 const manualFee = document.querySelector('.manualFeeInput');
